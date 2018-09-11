@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+// Panel
+
+<body>
+    <div class="container-fluid">
+        <h1> Display </h1>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">List View</a></li>
+            <li><a data-toggle="tab" href="#menu1">Matrix View</a></li>
+        </ul>
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <h3>List View</h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Price</th>
+                            <th>Airline</th>
+                            <th>Take-off</th>
+                            <th>Landing</th>
+                            <th>Stop(Duration)</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+                <h3>Matrix View</h3>
+                <span class="badge">1</span><a href="#"> of 3 flights show-one way </a>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Price</th>
+                            <th>Airline</th>
+                            <th>Take-off</th>
+                            <th>Landing</th>
+                            <th>Stop(Duration)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>john@example.com</td>
+                            <td>john@example.com</td>
+                            <td>john@example.com</td>
+                        </tr>
+                        <tr>
+                            <td>Mary</td>
+                            <td>Moe</td>
+                            <td>mary@example.com</td>
+                            <td>mary@example.com</td>
+                            <td>mary@example.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <nav aria-label="Page navigation example text-center">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
