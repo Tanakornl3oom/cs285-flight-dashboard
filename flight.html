@@ -13,95 +13,109 @@
 <body>
     <div class="container-fluid">
         <h1>Flight</h1>
-        <form action="/">
-            <div class="col-sm-12 text-right">
-                <div class="radio">
-                    <label><input type="radio" name="optradio">One Way</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="optradio" checked>Round Trip</label>
-                </div>
+        <!-- <form action="#"> -->
+        <div class="col-sm-12 text-right">
+            <div class="radio">
+                <label><input type="radio" name="optradio">One Way</label>
             </div>
-            <div class="col-sm-12">
+            <div class="radio">
+                <label><input type="radio" name="optradio" checked>Round Trip</label>
+            </div>
+        </div>
+        <div class="col-sm-12">
 
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label for="form">Flying from:</label>
-                        <input type="text" placeholder="From City" class="form-control" id="form">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="form">Flying from:</label>
+                    <input type="text" placeholder="From City" class="form-control" id="form">
+                </div>
+                <div class="col-sm-12 ">
+                    <div class="col-sm-8">
+                        <label>Departing Airport</label>
                     </div>
-                    <div class="col-sm-12 ">
-                        <div class="col-sm-8">
-                            <label>Departing Airport</label>
-                        </div>
-                        <div class="col-sm-4">
-                            <select class="form-control" id="sel1">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 ">
-                        <div class="col-sm-8">
-                            <label>Adults</label>
-                        </div>
-                        <div class="col-sm-4">
-                            <select class="form-control" id="sel1">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select>
-                        </div>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="sel1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
                     </div>
                 </div>
-
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label for="to">Flying to:</label>
-                        <input type="text" placeholder="To city" class="form-control" id="to">
+                <div class="col-sm-12 ">
+                    <div class="col-sm-8">
+                        <label>Adults</label>
                     </div>
-                    <div class="col-sm-12 ">
-
-                        <div class="col-sm-8">
-                            <label>Destination Airport</label>
-                        </div>
-                        <div class="col-sm-4">
-                            <select class="form-control" id="sel1">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 ">
-                        <div class="col-sm-8">
-                            <label>Travels class</label>
-                        </div>
-                        <div class="col-sm-4">
-                            <select class="form-control" id="sel1">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select>
-                        </div>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="sel1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
                     </div>
                 </div>
             </div>
-            <div>
-                <button type="submit" class="btn btn-success">submit</button>
-            </div>
-        </form>
 
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="to">Flying to:</label>
+                    <input type="text" placeholder="To city" class="form-control" id="to">
+                </div>
+                <div class="col-sm-12 ">
+
+                    <div class="col-sm-8">
+                        <label>Destination Airport</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="sel1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-12 ">
+                    <div class="col-sm-8">
+                        <label>Travels class</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="sel1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div>
+            <button id="submit" type="submit" class="btn btn-success">submit</button>
+        </div>
+        <!-- </form> -->
+
+        <div id="display">
+            <!-- <img src="./IMG_3747.JPG" width="100px" height="100px"> -->
             // show content listflight(mock up flight)
-            // ดึงข้อมูลจากหน้า listflight แสดงเป็นตาราง 
+            // ดึงข้อมูลจากหน้า listflight แสดงเป็นตาราง
             // หน้า listflight เขียนscript เป็น json และแสดงในตาราง
         </div>
     </div>
 </body>
+<script>
+    $(document).ready(() => {
+        $("#submit").click(() => {
+            console.log("test")
+            $("#display").load("listflight", (responseTxt, statusTxt, xhr) => {
+                if (statusTxt == "success")
+                    console.log("External content loaded successfully!")
+                if (statusTxt == "error")
+                    console.log("Error: " + xhr.status + ": " + xhr.statusText)
+            })
+        })
+    })
+</script>
 
 </html>
