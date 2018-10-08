@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1> Display </h1>
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a data-toggle="tab" href="#home">List View</a>
+            </li>
+            <li>
+                <a data-toggle="tab" href="#menu1">Matrix View</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <h3>List View</h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Price</th>
+                            <th>Airline</th>
+                            <th>Take-off</th>
+                            <th>Landing</th>
+                            <th>Stop(Duration)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body-1">
+                    </tbody>
+                </table>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+                <h3>Matrix View</h3>
+                <table class="table table-hover" id="flight-table" data-url="/flights" data-toggle="table" data-pagination="true">
+                    <thead>
+                        <tr>
+                            <th data-field="price">Price</th>
+                            <th data-field="airLine">Airline</th>
+                            <th data-field="takeOff">Take-off</th>
+                            <th data-field="landing">Landing</th>
+                            <th data-field="stop">Stop(Duration)</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <div id="test">
+
+        </div>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+
+</html>
