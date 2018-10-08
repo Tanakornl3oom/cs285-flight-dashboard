@@ -32,6 +32,8 @@
                             <th>Stop(Duration)</th>
                         </tr>
                     </thead>
+                    <tbody id="table-body-1">
+                    </tbody>
                 </table>
             </div>
             <div id="menu1" class="tab-pane fade">
@@ -47,35 +49,52 @@
                             <th>Stop(Duration)</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>john@example.com</td>
-                            <td>john@example.com</td>
-                            <td>john@example.com</td>
-                        </tr>
-                        <tr>
-                            <td>Mary</td>
-                            <td>Moe</td>
-                            <td>mary@example.com</td>
-                            <td>mary@example.com</td>
-                            <td>mary@example.com</td>
-                        </tr>
+                    <tbody id="table-body-2">
                     </tbody>
                 </table>
                 <nav aria-label="Page navigation example text-center">
                     <ul class="pagination">
                         <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link active" href="#" onclick='flightPage(1)'>1</a></li>
+                        <li class="page-item"><a class="page-link" href="#" id="page2" onclick="flightPage(2)">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#" id="page3" onclick="flightPage(3)">3</a></li>
                         <li class="page-item"><a class="page-link" href="#">Next</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
+        <div id="test">
+
+        </div>
     </div>
 </body>
+<script>
+    $(document).ready(() => {
+        $.get("flight/1", function (data, status) {
+            for (element in data) {
+                var str = $("#table-body-1").html();
+                // console.log("str", str);
+                $("#table-body-1").html(str + "<tr><td>" + data[element].price + "</td><td>" + data[element].airLine + "</td><td>" + data[element].takeOff + "</td><td>" + data[element].landing + "</td><td>" + data[element].stop + "</td></tr>")
+                $("#table-body-2").html(str + "<tr><td>" + data[element].price + "</td><td>" + data[element].airLine + "</td><td>" + data[element].takeOff + "</td><td>" + data[element].landing + "</td><td>" + data[element].stop + "</td></tr>")
+                // console.log(data[element]);
+            }
+        });
+
+        flightPage = (page) => {
+            console.log("page", page);
+            $("#table-body-1").html("");
+            $("#table-body-2").html("");
+            $.get("flight/" + page, function (data, status) {
+                for (element in data) {
+                    var str = $("#table-body-1").html();
+                    // console.log("str", str);
+                    $("#table-body-1").html(str + "<tr><td>" + data[element].price + "</td><td>" + data[element].airLine + "</td><td>" + data[element].takeOff + "</td><td>" + data[element].landing + "</td><td>" + data[element].stop + "</td></tr>")
+                    $("#table-body-2").html(str + "<tr><td>" + data[element].price + "</td><td>" + data[element].airLine + "</td><td>" + data[element].takeOff + "</td><td>" + data[element].landing + "</td><td>" + data[element].stop + "</td></tr>")
+                    // console.log(data[element]);
+                }
+            })
+        };
+    });
+</script>
 
 </html>
