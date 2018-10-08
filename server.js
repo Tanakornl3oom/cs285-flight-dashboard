@@ -13,11 +13,11 @@ const FLIGHTS = require("./flights.json");
 
 app.use("/", express.static(public));
 
-app.get("/searchflight", (req, res) => {
+app.get("/flight/search", (req, res) => {
 	res.sendFile(`${public}/flight.html`);
 });
 
-app.get("/listflight", (req, res) => {
+app.get("/flight/list", (req, res) => {
 	res.sendFile(`${public}/listflight.html`);
 });
 

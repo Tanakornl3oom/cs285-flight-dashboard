@@ -6,20 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <div class="container-fluid">
         <h1>Flight</h1>
-        <!-- <form action="#"> -->
         <div class="col-sm-12 text-right">
             <div class="radio">
-                <label><input type="radio" name="optradio">One Way</label>
+                <label>
+                    <input type="radio" name="optradio">One Way</label>
             </div>
             <div class="radio">
-                <label><input type="radio" name="optradio" checked>Round Trip</label>
+                <label>
+                    <input type="radio" name="optradio" checked>Round Trip</label>
             </div>
         </div>
         <div class="col-sm-12">
@@ -94,28 +93,13 @@
         <div>
             <button id="submit" type="submit" class="btn btn-success">submit</button>
         </div>
-        <!-- </form> -->
 
-        <div id="display">
-            <!-- <img src="./IMG_3747.JPG" width="100px" height="100px"> -->
-            // show content listflight(mock up flight)
-            // ดึงข้อมูลจากหน้า listflight แสดงเป็นตาราง
-            // หน้า listflight เขียนscript เป็น json และแสดงในตาราง
-        </div>
+        <div id="display"></div>
     </div>
 </body>
-<script>
-    $(document).ready(() => {
-        $("#submit").click(() => {
-            console.log("test")
-            $("#display").load("listflight", (responseTxt, statusTxt, xhr) => {
-                if (statusTxt == "success")
-                    console.log("External content loaded successfully!")
-                if (statusTxt == "error")
-                    console.log("Error: " + xhr.status + ": " + xhr.statusText)
-            })
-        })
-    })
-</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/flight_search.js"></script>
 
 </html>
