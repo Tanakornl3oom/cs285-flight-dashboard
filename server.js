@@ -13,6 +13,10 @@ const FLIGHTS = require("./flights.json");
 
 app.use("/", express.static(public));
 
+app.get("/", (req, res) => {
+	res.sendFile(`${public}/flight.html`);
+});
+
 app.get("/flight/search", (req, res) => {
 	res.sendFile(`${public}/flight.html`);
 });
@@ -21,8 +25,28 @@ app.get("/flight/list", (req, res) => {
 	res.sendFile(`${public}/listflight.html`);
 });
 
+const DEFAULT_ITEMS_PER_PAGE = 4;
+const DEFAULT_PAGE_NUMBER = 1;
+/**
+ * @param itemPerPages {number} - Number of items that will display as row per page
+ * @param pageNumber {number} - Number specify set of items that will display as row in that page
+ */
 app.get("/flights", (req, res) => {
-	res.send(FLIGHTS);
+	const {
+		itemsPerPage = DEFAULT_ITEMS_PER_PAGE,
+		pageNumber = DEFAULT_PAGE_NUMBER
+	} = req.query;
+	const offset = (pageNumber - 1) * itemsPerPage;
+
+	console.log(itemsPerPage, pageNumber);
+
+	res.json({
+		statusCode: 200,
+		flights: FLIGHTS.slice(offset, offset + itemsPerPage),
+		pageNumber,
+		itemsPerPage,
+		flightsPageTotal: Math.ceil(FLIGHTS.length / itemsPerPage)
+	});
 });
 
 app.listen(PORT, () => {

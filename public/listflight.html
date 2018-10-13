@@ -37,7 +37,7 @@
                     </tbody>
                 </table>
             </div>
-            <div id="menu1" class="tab-pane fade">
+            <!-- <div id="menu1" class="tab-pane fade">
                 <h3>Matrix View</h3>
                 <table class="table table-hover" id="flight-table" data-url="/flights" data-toggle="table" data-pagination="true">
                     <thead>
@@ -50,6 +50,29 @@
                         </tr>
                     </thead>
                 </table>
+            </div> -->
+            <div id="menu1" class="tab-pane fade">
+                <h3>Matrix View</h3>
+                <span class="badge" id="flights-badge">1</span>
+                <a> of
+                    <a id="flights-page-total">3</a> flights show-one way </a>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Price</th>
+                            <th>Airline</th>
+                            <th>Take-off</th>
+                            <th>Landing</th>
+                            <th>Stop(Duration)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body-2">
+                    </tbody>
+                </table>
+                <nav aria-label="Page navigation example text-center">
+                    <ul id="flights-pagination" class="pagination">
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
@@ -58,5 +81,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.js"></script>
+
+<script src="/flight_list.js"></script>
 
 </html>
