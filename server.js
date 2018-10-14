@@ -36,16 +36,14 @@ app.get("/flights", (req, res) => {
 		itemsPerPage = DEFAULT_ITEMS_PER_PAGE,
 		pageNumber = DEFAULT_PAGE_NUMBER
 	} = req.query;
-	const offset = (pageNumber - 1) * itemsPerPage;
-
-	console.log(itemsPerPage, pageNumber);
+	const offset = (parseInt(pageNumber) - 1) * parseInt(itemsPerPage);
 
 	res.json({
 		statusCode: 200,
-		flights: FLIGHTS.slice(offset, offset + itemsPerPage),
+		flights: FLIGHTS.slice(offset, parseInt(offset) + parseInt(itemsPerPage)),
 		pageNumber,
 		itemsPerPage,
-		flightsPageTotal: Math.ceil(FLIGHTS.length / itemsPerPage)
+		flightsPageTotal: Math.ceil(FLIGHTS.length / parseInt(itemsPerPage))
 	});
 });
 
