@@ -3,13 +3,18 @@ var fs = require("fs");
 var path = require("path");
 var bodyParser = require("body-parser");
 var express = require("express");
+const axios = require("axios");
 var app = express();
 
 const public = path.join(__dirname) + "/public";
 
 const PORT = 3000;
 const DEFAULT_SIZE = 3;
-const FLIGHTS = require("./flights.json");
+
+let FLIGHTS;
+axios.get("https://api.myjson.com/bins/1emzyg").then(({ data }) => {
+	FLIGHTS = data;
+});
 
 app.use("/", express.static(public));
 

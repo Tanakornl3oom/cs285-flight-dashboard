@@ -14,13 +14,14 @@ function renderFlightsRow(flights) {
 	flightsTable.html("");
 
 	flights.forEach(flight => {
-		flightsTable.append(`<tr>
-			<td>${flight.price}<td>
-			<td>${flight.airLine}<td>
-			<td>${flight.takeOff}<td>
-			<td>${flight.landing}<td>
-			<td>${flight.stop}<td>
-		</tr>`);
+		const tableData = `<tr>
+			<td>${flight.price}</td>
+			<td>${flight.airLine}</td>
+			<td>${flight.takeOff}</td>
+			<td>${flight.landing}</td>
+			<td>${flight.stop}</td>
+		</tr>`;
+		flightsTable.append(tableData);
 	});
 }
 

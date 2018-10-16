@@ -1,191 +1,86 @@
 [
 	{
-		"price": "4000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "thai"
+		"price": "980",
+		"airLine": "Air Asia",
+		"takeOff": "CNX 18:00",
+		"landing": "BKK 19:00",
+		"stop": "1"
 	},
 	{
-		"price": "4000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Hongkong"
+		"price": "1,200",
+		"airLine": "Air Asia",
+		"takeOff": "CNX 19:00",
+		"landing": "BKK 20:00",
+		"stop": "1"
 	},
 	{
-		"price": "4000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
+		"price": "990",
+		"airLine": "Air Asia",
+		"takeOff": "CNX 20:00",
+		"landing": "BKK 21:00",
+		"stop": "1"
 	},
 	{
-		"price": "5000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "thai"
+		"price": "1,100",
+		"airLine": "Air Asia",
+		"takeOff": "CNX 21:00",
+		"landing": "BKK 22:00",
+		"stop": "1"
 	},
 	{
-		"price": "3000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Hongkong"
+		"price": "1,200",
+		"airLine": "Air Asia",
+		"takeOff": "DMX 13:00",
+		"landing": "CNX 14:10",
+		"stop": "1"
 	},
 	{
-		"price": "2000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
+		"price": "13,000",
+		"airLine": "Thai Airway",
+		"takeOff": "BKK 16:10",
+		"landing": "KNX 19:50",
+		"stop": "1"
 	},
 	{
-		"price": "6000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "thai"
+		"price": "14,670",
+		"airLine": "Thai Airway",
+		"takeOff": "BKK 20:10",
+		"landing": "KNX 01:20",
+		"stop": "1"
 	},
 	{
-		"price": "7000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Hongkong"
+		"price": "19,500",
+		"airLine": "Thai Airway",
+		"takeOff": "BKK 08:10",
+		"landing": "KNX 11:50",
+		"stop": "1"
 	},
 	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
+		"price": "77,592.50",
+		"airLine": "EI AI Isarael Air",
+		"takeOff": "BKK 15:35",
+		"landing": "CDG 05:30",
+		"stop": "1"
 	},
 	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
+		"price": "77,592.50",
+		"airLine": "Singapore Air",
+		"takeOff": "BKK 19:05",
+		"landing": "CDG 06:50",
+		"stop": "2"
 	},
 	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
+		"price": "99,400",
+		"airLine": "Singapore Air",
+		"takeOff": "BKK 16:40",
+		"landing": "CDG 06:50",
+		"stop": "1"
 	},
 	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
-	},
-	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
-	},
-	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
-	},
-	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
-	},
-	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
-	},
-	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
-	},
-	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
-	},
-	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
-	},
-	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
-	},
-	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
-	},
-	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
-	},
-	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
-	},
-	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
-	},
-	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
-	},
-	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
-	},
-	{
-		"price": "8000",
-		"airLine": "thai Airway",
-		"takeOff": "suwanaphum",
-		"landing": "Don Munag",
-		"stop": "Malaysia"
+		"price": "99,400",
+		"airLine": "Singapore Air",
+		"takeOff": "BKK 13:40",
+		"landing": "CDG 03:50",
+		"stop": "2"
 	}
 ]
