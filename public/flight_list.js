@@ -15,7 +15,7 @@ function renderFlightsRow(flights) {
 
 	flights.forEach(flight => {
 		const tableData = `<tr>
-			<td>${flight.price}</td>
+			<td><p class="flight-price">${flight.price}</p></td>
 			<td>${flight.airLine}</td>
 			<td>${flight.takeOff}</td>
 			<td>${flight.landing}</td>

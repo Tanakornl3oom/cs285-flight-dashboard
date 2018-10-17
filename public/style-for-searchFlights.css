@@ -1,12 +1,17 @@
 body {
-  background-color: snow;
+	background-color: snow;
 }
 h1 {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  font-size: 50px;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
+	font-size: 50px;
 }
 label {
-  font-family: fantasy;
-  font-size: 15px;
+	font-family: fantasy;
+	font-size: 15px;
+}
+
+.flight-price {
+	font-size: 20px;
+	font-weight: bold;
 }
