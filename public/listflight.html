@@ -7,21 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css" />
+    <link rel="stylesheet" href="./style-displayFlight-page.css">
+
 </head>
 
 <body>
     <div class="container-fluid">
         <h1> Display </h1>
         <ul class="nav nav-tabs">
-            <li class="active">
+            <li>
                 <a data-toggle="tab" href="#home">List View</a>
             </li>
-            <li>
+            <li class="active">
                 <a data-toggle="tab" href="#menu1">Matrix View</a>
             </li>
         </ul>
         <div class="tab-content">
-            <div id="home" class="tab-pane fade in active">
+            <div id="home" class="tab-pane fade">
                 <h3>List View</h3>
                 <table class="table table-hover">
                     <thead>
@@ -51,7 +53,7 @@
                     </thead>
                 </table>
             </div> -->
-            <div id="menu1" class="tab-pane fade">
+            <div id="menu1" class="tab-pane fade in active">
                 <h3>Matrix View</h3>
                 <span class="badge" id="flights-badge">1</span>
                 <a> of
