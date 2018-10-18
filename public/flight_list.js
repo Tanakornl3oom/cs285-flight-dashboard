@@ -7,8 +7,11 @@ const flightsTable = $("#table-body-2");
 
 const flightsPagination = $("#flights-pagination");
 
+const defaultPageNumber = 1;
+const defaultItemsPerPage = 3;
+
 let currentPageSelection = 1;
-let maximumPageSelection = 1;
+let maximumPageSelection = 3;
 
 function renderFlightsRow(flights) {
 	flightsTable.html("");
@@ -54,7 +57,10 @@ function renderFlightsPagination(flightsPageTotal) {
 	);
 }
 
-function fetchFlights(pageNumber = 1, itemsPerPage) {
+function fetchFlights(
+	pageNumber = defaultPageNumber,
+	itemsPerPage = defaultItemsPerPage
+) {
 	let query;
 	if (!pageNumber && !itemsPerPage) query = "";
 	else if (pageNumber && itemsPerPage)
@@ -79,5 +85,5 @@ function fetchFlights(pageNumber = 1, itemsPerPage) {
 }
 
 $(document).ready(() => {
-	fetchFlights();
+	fetchFlights(defaultPageNumber, defaultItemsPerPage);
 });

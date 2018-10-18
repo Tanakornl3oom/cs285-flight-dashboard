@@ -8,7 +8,7 @@ var app = express();
 
 const public = path.join(__dirname) + "/public";
 
-const PORT = 3000;
+const PORT = 8383;
 const DEFAULT_SIZE = 3;
 
 let FLIGHTS;
@@ -41,6 +41,7 @@ app.get("/flights", (req, res) => {
 		itemsPerPage = DEFAULT_ITEMS_PER_PAGE,
 		pageNumber = DEFAULT_PAGE_NUMBER
 	} = req.query;
+	console.log(pageNumber, itemsPerPage);
 	const offset = (parseInt(pageNumber) - 1) * parseInt(itemsPerPage);
 
 	res.json({
@@ -50,6 +51,18 @@ app.get("/flights", (req, res) => {
 		itemsPerPage,
 		flightsPageTotal: Math.ceil(FLIGHTS.length / parseInt(itemsPerPage))
 	});
+});
+
+app.get("/JS4/searchFlight.html", (req, res) => {
+	res.sendFile(`${public}/flight.html`);
+});
+
+app.get("/JS4/listFlights.html", (req, res) => {
+	res.sendFile(`${public}/listflight-listview.html`);
+});
+
+app.get("/JS4/displayFlights.html", (req, res) => {
+	res.sendFile(`${public}/listflight.html`);
 });
 
 app.listen(PORT, () => {
