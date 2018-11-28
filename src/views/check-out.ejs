@@ -1,29 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css"
-    />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="container-fluid">
-      <div class="col-sm-8">
-        <div class="container-fluid" style="background-color: coral">test</div>
-      </div>
-      <div class="col-sm-4">
-        <div class="container-fluid" style="background-color: black;">
-          testetsetaesdsagasdgfasd fadsfdsfsdafdsfsadf
-        </div>
-      </div>
-    </div>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css"
+		/>
+		<link rel="stylesheet" href="/checkout-box.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="col-sm-8">
+				<div class="container-fluid" style="background-color: coral">test</div>
+			</div>
+			<div class="col-sm-4">
+				<div
+					class="container-fluid panel panel-default"
+					style="padding: 0 !important;"
+				>
+					<div
+						class="px-2"
+						style="display: flex; background-color: orange; width: 100%; padding-left: 5%;"
+					>
+						<h4>Payment Information</h4>
+					</div>
+					<div class="row-sm payment-item" style="display: flex;">
+						<div class="col-sm-7 ">
+							<span class="glyphicon glyphicon-menu-right"></span>Flight
+						</div>
+						<div class="col-sm-5 price-tag"><span>25670 บาท</span></div>
+					</div>
+					<div class="row-sm payment-item" style="display: flex;">
+						<div class="col-sm-7 ">
+							<span class="glyphicon glyphicon-menu-right"></span
+							><span>Tax:</span>
+						</div>
+						<div class="col-sm-5 price-tag"><span>1000 บาท</span></div>
+					</div>
+					<div class="row-sm payment-item" style="display: flex;">
+						<div class="col-sm-7 ">
+							<span class="glyphicon glyphicon-menu-right"></span>Services Fee:
+						</div>
+						<div class="col-sm-5 price-tag">200 บาท</div>
+					</div>
+					<div class="row-sm" style="display: flex;">
+						<div class="col-sm-4 "></div>
+						<div class="col-sm-8 price-tag" style="margin: 2% 2%;">
+							Total: 36,670 บาท
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

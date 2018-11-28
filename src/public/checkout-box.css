@@ -1,0 +1,20 @@
+.payment-item {
+	margin-top: 2% !important;
+	margin-bottom: 2% !important;
+	padding: 1% 1%;
+	border-bottom: 0.1px solid whitesmoke;
+}
+
+.glyphicon-menu-right {
+	color: white;
+	background: aqua;
+	margin-right: 2.5%;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.price-tag {
+	text-align: right;
+}
