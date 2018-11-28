@@ -1,14 +1,28 @@
-var http = require("http");
-var fs = require("fs");
-var path = require("path");
-var bodyParser = require("body-parser");
-var express = require("express");
-const axios = require("axios");
-var app = express();
+import "./env";
 
-const public = path.join(__dirname) + "/public";
+import path from "path";
+import bodyParser from "body-parser";
+import axios from "axios";
+import logger from "morgan";
 
-const PORT = 8383;
+import express from "express";
+const app = express();
+
+/* configure express router */
+app.use(logger("dev"));
+
+app.set("views", path.join(__dirname, "views"));
+
+// set the view engine to ejs
+app.set("view engine", "ejs");
+
+// json middleware
+app.use(bodyParser.json());
+
+app.use(express.static(path.join(__dirname, "public")));
+
+const publicPath = path.join(__dirname) + "/public";
+
 const DEFAULT_SIZE = 3;
 
 let FLIGHTS;
@@ -16,18 +30,19 @@ axios.get("https://api.myjson.com/bins/1emzyg").then(({ data }) => {
 	FLIGHTS = data;
 });
 
-app.use("/", express.static(public));
+app.use("/", express.static(publicPath));
 
 app.get("/", (req, res) => {
-	res.sendFile(`${public}/flight.html`);
+	// res.sendFile(`${publicPath}/flight.html`);
+	res.render("index");
 });
 
 app.get("/flight/search", (req, res) => {
-	res.sendFile(`${public}/flight.html`);
+	res.sendFile(`${publicPath}/flight.html`);
 });
 
 app.get("/flight/list", (req, res) => {
-	res.sendFile(`${public}/listflight.html`);
+	res.sendFile(`${publicPath}/listflight.html`);
 });
 
 const DEFAULT_ITEMS_PER_PAGE = 4;
@@ -54,17 +69,18 @@ app.get("/flights", (req, res) => {
 });
 
 app.get("/JS4/searchFlight.html", (req, res) => {
-	res.sendFile(`${public}/flight.html`);
+	res.sendFile(`${publicPath}/flight.html`);
 });
 
 app.get("/JS4/listFlights.html", (req, res) => {
-	res.sendFile(`${public}/listflight-listview.html`);
+	res.sendFile(`${publicPath}/listflight-listview.html`);
 });
 
 app.get("/JS4/displayFlights.html", (req, res) => {
-	res.sendFile(`${public}/listflight.html`);
+	res.sendFile(`${publicPath}/listflight.html`);
 });
 
+const PORT = 3000;
 app.listen(PORT, () => {
 	console.log(`Start server at port: ${PORT}`);
 });
