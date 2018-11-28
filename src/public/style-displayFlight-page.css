@@ -1,16 +1,23 @@
 body {
-	background-color: snow;
+  background-color: snow;
 }
 h1 {
-	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-		"Lucida Sans", Arial, sans-serif;
-	font-size: 50px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 50px;
 }
 label {
-	font-family: fantasy;
-	font-size: 15px;
+  font-family: fantasy;
+  font-size: 15px;
 }
 
 .badge {
-	background-color: green !important;
+  background-color: green !important;
+}
+
+.price {
+  font-size: 20px;
+}
+.takeland {
+  font-size: 25px;
 }

@@ -27,22 +27,24 @@ const DEFAULT_SIZE = 3;
 
 let FLIGHTS;
 axios.get("https://api.myjson.com/bins/1emzyg").then(({ data }) => {
-	FLIGHTS = data;
+  FLIGHTS = data;
 });
 
 app.use("/", express.static(publicPath));
 
 app.get("/", (req, res) => {
-	// res.sendFile(`${publicPath}/flight.html`);
-	res.render("index");
+  // res.sendFile(`${publicPath}/flight.html`);
+  res.render("flight");
 });
 
 app.get("/flight/search", (req, res) => {
-	res.sendFile(`${publicPath}/flight.html`);
+  res.render("flight");
+  //   res.sendFile(`${publicPath}/flight.html`);
 });
 
 app.get("/flight/list", (req, res) => {
-	res.sendFile(`${publicPath}/listflight.html`);
+  res.render("listflight");
+  //   res.sendFile(`${publicPath}/listflight.html`);
 });
 
 const DEFAULT_ITEMS_PER_PAGE = 4;
@@ -52,35 +54,35 @@ const DEFAULT_PAGE_NUMBER = 1;
  * @param pageNumber {number} - Number specify set of items that will display as row in that page
  */
 app.get("/flights", (req, res) => {
-	const {
-		itemsPerPage = DEFAULT_ITEMS_PER_PAGE,
-		pageNumber = DEFAULT_PAGE_NUMBER
-	} = req.query;
-	console.log(pageNumber, itemsPerPage);
-	const offset = (parseInt(pageNumber) - 1) * parseInt(itemsPerPage);
+  const {
+    itemsPerPage = DEFAULT_ITEMS_PER_PAGE,
+    pageNumber = DEFAULT_PAGE_NUMBER
+  } = req.query;
+  console.log(pageNumber, itemsPerPage);
+  const offset = (parseInt(pageNumber) - 1) * parseInt(itemsPerPage);
 
-	res.json({
-		statusCode: 200,
-		flights: FLIGHTS.slice(offset, parseInt(offset) + parseInt(itemsPerPage)),
-		pageNumber,
-		itemsPerPage,
-		flightsPageTotal: Math.ceil(FLIGHTS.length / parseInt(itemsPerPage))
-	});
+  res.json({
+    statusCode: 200,
+    flights: FLIGHTS.slice(offset, parseInt(offset) + parseInt(itemsPerPage)),
+    pageNumber,
+    itemsPerPage,
+    flightsPageTotal: Math.ceil(FLIGHTS.length / parseInt(itemsPerPage))
+  });
 });
 
 app.get("/JS4/searchFlight.html", (req, res) => {
-	res.sendFile(`${publicPath}/flight.html`);
+  res.sendFile(`${publicPath}/flight.html`);
 });
 
 app.get("/JS4/listFlights.html", (req, res) => {
-	res.sendFile(`${publicPath}/listflight-listview.html`);
+  res.sendFile(`${publicPath}/listflight-listview.html`);
 });
 
 app.get("/JS4/displayFlights.html", (req, res) => {
-	res.sendFile(`${publicPath}/listflight.html`);
+  res.sendFile(`${publicPath}/listflight.html`);
 });
 
 const PORT = 3000;
 app.listen(PORT, () => {
-	console.log(`Start server at port: ${PORT}`);
+  console.log(`Start server at port: ${PORT}`);
 });
