@@ -1,26 +1,36 @@
 {
-  "name": "cs285-flight-dashboard",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Tanakornl3oom/cs285-flight-dashboard.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Tanakornl3oom/cs285-flight-dashboard/issues"
-  },
-  "homepage": "https://github.com/Tanakornl3oom/cs285-flight-dashboard#readme",
-  "dependencies": {
-    "axios": "^0.18.0",
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "path": "^0.12.7"
-  }
+	"name": "cs285-flight-dashboard",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Tanakornl3oom/cs285-flight-dashboard.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Tanakornl3oom/cs285-flight-dashboard/issues"
+	},
+	"homepage": "https://github.com/Tanakornl3oom/cs285-flight-dashboard#readme",
+	"dependencies": {
+		"axios": "^0.18.0",
+		"body-parser": "^1.18.3",
+		"express": "^4.16.3",
+		"path": "^0.12.7",
+		"cross-env": "^5.2.0",
+		"debug": "^4.1.0",
+		"dotenv": "^6.1.0"
+	},
+	"devDependencies": {
+		"@babel/cli": "7.0.0-beta.54",
+		"@babel/core": "7.0.0-beta.54",
+		"@babel/node": "7.0.0-beta.54",
+		"@babel/plugin-syntax-dynamic-import": "7.0.0-beta.54",
+		"@babel/preset-env": "7.0.0-beta.54"
+	}
 }
