@@ -19,6 +19,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/check-out.css" />
+    <link rel="stylesheet" href="/checkout-box.css" />
     <title>Document</title>
   </head>
   <body>
@@ -199,9 +200,42 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="container-fluid" style="background-color: black;">
-          testetsetaesdsagasdgfasd fadsfdsfsdafdsfsadf
+      <div class="col-sm-4">
+        <div
+          class="container-fluid panel panel-default"
+          style="padding: 0 !important;"
+        >
+          <div
+            class="px-2"
+            style="display: flex; background-color: orange; width: 100%; padding-left: 5%;"
+          >
+            <h4>Payment Information</h4>
+          </div>
+          <div class="row-sm payment-item" style="display: flex;">
+            <div class="col-sm-7 ">
+              <span class="glyphicon glyphicon-menu-right"></span>Flight
+            </div>
+            <div class="col-sm-5 price-tag"><span>25670 บาท</span></div>
+          </div>
+          <div class="row-sm payment-item" style="display: flex;">
+            <div class="col-sm-7 ">
+              <span class="glyphicon glyphicon-menu-right"></span
+              ><span>Tax:</span>
+            </div>
+            <div class="col-sm-5 price-tag"><span>1000 บาท</span></div>
+          </div>
+          <div class="row-sm payment-item" style="display: flex;">
+            <div class="col-sm-7 ">
+              <span class="glyphicon glyphicon-menu-right"></span>Services Fee:
+            </div>
+            <div class="col-sm-5 price-tag">200 บาท</div>
+          </div>
+          <div class="row-sm" style="display: flex;">
+            <div class="col-sm-4 "></div>
+            <div class="col-sm-8 price-tag" style="margin: 2% 2%;">
+              Total: 36,670 บาท
+            </div>
+          </div>
         </div>
       </div>
     </div>
