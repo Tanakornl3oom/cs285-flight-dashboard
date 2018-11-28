@@ -53,7 +53,7 @@ app.get("/flight/:flightId/check-out", async (req, res) => {
   try {
     const flight = await findFlightById({ flightId });
     if (!flight) throw new Error("Flight not found!");
-
+    res.render("check-out");
     //TODO: res.render("ejsfile", { flight })
   } catch (error) {
     res.status(400).send(error.message || error);
