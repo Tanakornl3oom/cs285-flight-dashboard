@@ -40,10 +40,12 @@ app.get("/", (req, res) => {
 
 app.get("/flight/search", (req, res) => {
   // res.sendFile(`${publicPath}/flight.html`);
+  res.render("flight");
 });
 
 app.get("/flight/list", (req, res) => {
   // res.sendFile(`${publicPath}/listflight.html`);
+  res.render("listflight");
 });
 
 app.get("/flight/:flightId/check-out", async (req, res) => {
