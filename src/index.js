@@ -1,14 +1,17 @@
 import "./env";
 
+// import "./models/test";
+
 import path from "path";
 import bodyParser from "body-parser";
-import axios from "axios";
 import logger from "morgan";
 
 import express from "express";
 const app = express();
 
-/* configure express router */
+/**
+ * configure express router
+ */
 app.use(logger("dev"));
 
 app.set("views", path.join(__dirname, "views"));
@@ -21,30 +24,38 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, "public")));
 
-const publicPath = path.join(__dirname) + "/public";
+/**
+ * initiate some variables
+ */
+import { flights as FLIGHTS, findFlightById } from "./controllers/flight";
 
-const DEFAULT_SIZE = 3;
-
-let FLIGHTS;
-axios.get("https://api.myjson.com/bins/1emzyg").then(({ data }) => {
-  FLIGHTS = data;
-});
-
-app.use("/", express.static(publicPath));
-
+/**
+ * define routers
+ */
 app.get("/", (req, res) => {
   // res.sendFile(`${publicPath}/flight.html`);
-  res.render("flight");
+  console.log(flights);
+  res.render("index");
 });
 
 app.get("/flight/search", (req, res) => {
-  res.render("flight");
-  //   res.sendFile(`${publicPath}/flight.html`);
+  // res.sendFile(`${publicPath}/flight.html`);
 });
 
 app.get("/flight/list", (req, res) => {
-  res.render("listflight");
-  //   res.sendFile(`${publicPath}/listflight.html`);
+  // res.sendFile(`${publicPath}/listflight.html`);
+});
+
+app.get("/flight/:flightId/check-out", async (req, res) => {
+  const { flightId } = req.params;
+  try {
+    const flight = await findFlightById({ flightId });
+    if (!flight) throw new Error("Flight not found!");
+
+    //TODO: res.render("ejsfile", { flight })
+  } catch (error) {
+    res.status(400).send(error.message || error);
+  }
 });
 
 const DEFAULT_ITEMS_PER_PAGE = 4;
@@ -68,18 +79,6 @@ app.get("/flights", (req, res) => {
     itemsPerPage,
     flightsPageTotal: Math.ceil(FLIGHTS.length / parseInt(itemsPerPage))
   });
-});
-
-app.get("/JS4/searchFlight.html", (req, res) => {
-  res.sendFile(`${publicPath}/flight.html`);
-});
-
-app.get("/JS4/listFlights.html", (req, res) => {
-  res.sendFile(`${publicPath}/listflight-listview.html`);
-});
-
-app.get("/JS4/displayFlights.html", (req, res) => {
-  res.sendFile(`${publicPath}/listflight.html`);
 });
 
 const PORT = 3000;
