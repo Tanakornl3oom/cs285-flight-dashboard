@@ -24,8 +24,8 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="col-md-8 padding-zero">
-        <div class="margin-top">
+      <div class="col-md-8 padding-zero" >
+        <div class="margin-top" id="div-information">
           <div class="well bg-white padding-important">
             <div class="container-fluid">
               <div class="row">
@@ -36,7 +36,7 @@
               </div>
               <div class="row">
                 <div class="col-sm-2">
-                  <select>
+                  <select id = "title">
                     <option value="volvo">Volvo</option>
                     <option value="saab">Saab</option>
                     <option value="mercedes">Mercedes</option>
@@ -44,23 +44,23 @@
                   </select>
                 </div>
                 <div class="col-sm-3">
-                  <input type="text" value="firstname" />
+                  <input type="text" value="firstname" id = "firstname" />
                 </div>
                 <div class="col-sm-3">
-                  <input type="text" value="lastname" />
+                  <input type="text" value="lastname"  id = "lastname"/>
                 </div>
                 <div class="col-sm-4">
-                  <select>
+                  <select  id = "day">
                     <% for (let day = 1; day <=31; day ++) { %>
                     <option value="<%=day%>"><%=day%></option>
                     <% } %>
                   </select>
-                  <select>
+                  <select  id = "month">
                     <% for (let month = 1; month <=12; month ++) { %>
                     <option value="<%=month%>"><%=month%></option>
                     <% } %>
                   </select>
-                  <select>
+                  <select id ="year">
                     <% for (let year = 1970; year <=2018; year ++) { %>
                     <option value="<%=year%>"><%=year%></option>
                     <% } %>
@@ -74,10 +74,10 @@
               </div>
               <div class="row">
                 <div class="col-sm-4">
-                  <input type="text" value="Passport" />
+                  <input type="text" value="Passport"id ="passport" />
                 </div>
                 <div class="col-sm-4">
-                  <select>
+                  <select id ="country">
                     <option value="volvo">Volvo</option>
                     <option value="saab">Saab</option>
                     <option value="mercedes">Mercedes</option>
@@ -85,17 +85,17 @@
                   </select>
                 </div>
                 <div class="col-sm-4">
-                  <select>
+                  <select id ="day-exp">
                     <% for (let day = 1; day <=31; day ++) { %>
                     <option value="<%=day%>"><%=day%></option>
                     <% } %>
                   </select>
-                  <select>
+                  <select id ="month-exp">
                     <% for (let month = 1; month <=12; month ++) { %>
                     <option value="<%=month%>"><%=month%></option>
                     <% } %>
                   </select>
-                  <select>
+                  <select id ="year-exp">
                     <% for (let year = 1970; year <=2018; year ++) { %>
                     <option value="<%=year%>"><%=year%></option>
                     <% } %>
@@ -103,7 +103,7 @@
                 </div>
               </div>
               <div class="center">
-                <button class="btn-success btn-md btn" type="button">
+                <button class="btn-success btn-md btn" type="button"  id="information">
                   Next
                 </button>
               </div>
@@ -111,7 +111,7 @@
           </div>
         </div>
 
-        <div class="container-fluid">
+        <div class="container-fluid" id="div-option" style="display:none">
           <div class="margin-top">
             <div class="well bg-grey">
               <div class="col margin-bottom">
@@ -127,9 +127,9 @@
                     <div class="row">
                       <div class="col-sm-1">
                         <input
+                          id="tour-fee"
                           type="checkbox"
                           name="tour_fee"
-                          value="tour_fee"
                         />
                       </div>
                       <div class="col-sm-10">
@@ -161,9 +161,9 @@
                     <div class="row">
                       <div class="col-sm-1">
                         <input
+                          id="health-fee"
                           type="checkbox"
-                          name="tour_fee"
-                          value="tour_fee"
+                          name="health-fee"
                         />
                       </div>
                       <div class="col-sm-10">
@@ -191,7 +191,7 @@
                 </div>
               </div>
               <div class="center">
-                <button class="btn-success btn-md btn" type="button">
+                <button class="btn-success btn-md btn" type="button" id="option">
                   Next
                 </button>
               </div>
@@ -239,5 +239,8 @@
         </div>
       </div>
     </div>
+    
   </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/check_out.js"></script>
 </html>
