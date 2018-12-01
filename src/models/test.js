@@ -1,16 +1,14 @@
+import FeeCreator from "./FeeCreator";
 import Flight from "./Flight";
-import ServiceFee from "./ServiceFee";
-const flightFee = new Flight({
+
+const flight = new Flight({
 	id: 1,
 	price: 100,
 	airLine: "SG",
 	takeOff: "09:00",
 	landing: "10:00"
 });
-console.log("flightFee", flightFee);
-const lifeInsurance = new ServiceFee({
-	extraFee: flightFee,
-	service: "LIFE_INSURANCE"
-});
-console.log("lifeInsurance", lifeInsurance);
-console.log("total", lifeInsurance.getTotalFee());
+
+const feeCreator = new FeeCreator();
+const fee = feeCreator.createFee({ flight, feePackage: "LIFE" });
+console.log(fee.getTotalFee());

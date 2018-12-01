@@ -6,6 +6,6 @@ export default class LifeInsurance extends ExtraFee {
 	}
 
 	getFee() {
-		return 1000;
+		return 650;
 	}
 }

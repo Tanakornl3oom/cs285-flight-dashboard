@@ -6,6 +6,6 @@ export default class BagInsurance extends ExtraFee {
 	}
 
 	getFee() {
-		return 1000;
+		return 350;
 	}
 }
