@@ -28,6 +28,8 @@ app.use(express.static(path.join(__dirname, "public")));
  * initiate some variables
  */
 import { flights as FLIGHTS, findFlightById } from "./controllers/flight";
+import Flight from "./models/Flight";
+import FeeCreator from "./models/FeeCreator";
 
 /**
  * define routers
@@ -62,11 +64,38 @@ app.get("/flight/:flightId/check-out", async (req, res) => {
 
 app.post("/flight/:flightId/purchase", async (req, res) => {
 	try {
-		//TODO 1: Get user form
-		//TODO 2: Get flight data
-		//TODO 3: Get Insurance information
-		//Do the OO things
-		//Log
+		const { user, insurances, flightId } = req.body;
+
+		/* Show user informations */
+		const {
+			title,
+			firstName,
+			lastName,
+			birthDate,
+			passport,
+			country,
+			passportExp
+		} = user;
+
+		console.log(`${title}${firstName} ${lastName} | birthDate: ${birthDate}`);
+		console.log(`Passport: ${passport}${country} | expired in: ${passportExp}`);
+
+		/* Create flight object */
+		const flightObj = await findFlightById({ flightId });
+		const flight = new Flight(flightObj);
+
+		/* Fee management */
+		const { bag, life } = insurances;
+
+		let feePackage;
+		if (bag && life) feePackage = "LIFENBAG";
+		else if (bag) feePackage = "BAG";
+		else feePackage = "LIFE";
+
+		const feeCreator = new FeeCreator();
+		const fee = feeCreator.createFee({ flight, feePackage });
+
+		console.log(`Total fee: ${fee.getTotalFee}`);
 	} catch (error) {
 		res.status(400).send(error.message || error);
 	}

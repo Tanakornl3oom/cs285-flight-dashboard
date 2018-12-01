@@ -6,7 +6,8 @@
 	"scripts": {
 		"dev": "nodemon src/index.js --exec babel-node",
 		"build": "babel src/ -d dist",
-		"start": "node dist/bin/www.js"
+		"start": "node dist/bin/www.js",
+		"test": "nodemon src/models/test.js --exec babel-node"
 	},
 	"repository": {
 		"type": "git",
