@@ -1,0 +1,34 @@
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5%;
+}
+.margin-information {
+  margin: 10%;
+}
+
+.margin-bottom {
+  margin-bottom: 2%;
+}
+
+.bg-grey {
+  background-color: azure;
+}
+.bg-white {
+  background-color: white;
+  border: none !important;
+}
+.margin-top {
+  margin-top: 5%;
+}
+.padding-important {
+  padding: 1% !important;
+}
+.margin-top-bottom {
+  margin-top: 10%;
+}
+.padding-zero {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.12.1/bootstrap-table.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/check-out.css" />
+    <link rel="stylesheet" href="/checkout-box.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="col-md-8 padding-zero" >
+        <div class="margin-top" id="div-information">
+          <div class="well bg-white padding-important">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-2">title *</div>
+                <div class="col-sm-3">firstname *</div>
+                <div class="col-sm-3">lastname *</div>
+                <div class="col-sm-4">Birth Date *</div>
+              </div>
+              <div class="row">
+                <div class="col-sm-2">
+                  <select id = "title">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                  </select>
+                </div>
+                <div class="col-sm-3">
+                  <input type="text" value="firstname" id = "firstname" />
+                </div>
+                <div class="col-sm-3">
+                  <input type="text" value="lastname"  id = "lastname"/>
+                </div>
+                <div class="col-sm-4">
+                  <select  id = "day">
+                    <% for (let day = 1; day <=31; day ++) { %>
+                    <option value="<%=day%>"><%=day%></option>
+                    <% } %>
+                  </select>
+                  <select  id = "month">
+                    <% for (let month = 1; month <=12; month ++) { %>
+                    <option value="<%=month%>"><%=month%></option>
+                    <% } %>
+                  </select>
+                  <select id ="year">
+                    <% for (let year = 1970; year <=2018; year ++) { %>
+                    <option value="<%=year%>"><%=year%></option>
+                    <% } %>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4">Passport No *</div>
+                <div class="col-sm-4">Country *</div>
+                <div class="col-sm-4">Passport Expiration Date *</div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                  <input type="text" value="Passport"id ="passport" />
+                </div>
+                <div class="col-sm-4">
+                  <select id ="country">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                  </select>
+                </div>
+                <div class="col-sm-4">
+                  <select id ="day-exp">
+                    <% for (let day = 1; day <=31; day ++) { %>
+                    <option value="<%=day%>"><%=day%></option>
+                    <% } %>
+                  </select>
+                  <select id ="month-exp">
+                    <% for (let month = 1; month <=12; month ++) { %>
+                    <option value="<%=month%>"><%=month%></option>
+                    <% } %>
+                  </select>
+                  <select id ="year-exp">
+                    <% for (let year = 1970; year <=2018; year ++) { %>
+                    <option value="<%=year%>"><%=year%></option>
+                    <% } %>
+                  </select>
+                </div>
+              </div>
+              <div class="center">
+                <button class="btn-success btn-md btn" type="button"  id="information">
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid" id="div-option" style="display:none">
+          <div class="margin-top">
+            <div class="well bg-grey">
+              <div class="col margin-bottom">
+                <i
+                  class="fas fa-briefcase-medical"
+                  style="font-size:36px;color:red"
+                ></i>
+                <span>ประกัรนัยระหว่างการเดินทาง</span>
+              </div>
+              <div class="well">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="row">
+                      <div class="col-sm-1">
+                        <input
+                          id="tour-fee"
+                          type="checkbox"
+                          name="tour_fee"
+                        />
+                      </div>
+                      <div class="col-sm-10">
+                        <front> ประกันกระเป๋าเดินทางหายหรือล่าช้า</front><br />
+                        <front> (ราคา 350 บาท)</front>
+                      </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                      <div class="col-sm-1">
+                        <span class="glyphicon glyphicon-menu-left"></span>
+                      </div>
+                      <div class="col-sm-10">
+                        <front> ดูเพิ่มเติม</front><br />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <img
+                      src="/travel-insurance.jpg"
+                      style="height: 100%; width: 100%; object-fit: contain"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="well">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="row">
+                      <div class="col-sm-1">
+                        <input
+                          id="health-fee"
+                          type="checkbox"
+                          name="health-fee"
+                        />
+                      </div>
+                      <div class="col-sm-10">
+                        <front> ประกันอุบัติเหตุและสุขภาพ ระหว่างเดินทาง</front
+                        ><br />
+                        <front> (ราคา 1,300 บาท)</front>
+                      </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                      <div class="col-sm-1">
+                        <span class="glyphicon glyphicon-menu-left"></span>
+                      </div>
+                      <div class="col-sm-10">
+                        <front> ดูเพิ่มเติม</front><br />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <img
+                      src="/health.png"
+                      style="height: 100%; width: 100%; object-fit: contain"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="center">
+                <button class="btn-success btn-md btn" type="button" id="option">
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div
+          class="container-fluid panel panel-default"
+          style="padding: 0 !important;"
+        >
+          <div
+            class="px-2"
+            style="display: flex; background-color: orange; width: 100%; padding-left: 5%;"
+          >
+            <h4>Payment Information</h4>
+          </div>
+          <div class="row-sm payment-item" style="display: flex;">
+            <div class="col-sm-7 ">
+              <span class="glyphicon glyphicon-menu-right"></span>Flight
+            </div>
+            <div class="col-sm-5 price-tag"><span>25670 บาท</span></div>
+          </div>
+          <div class="row-sm payment-item" style="display: flex;">
+            <div class="col-sm-7 ">
+              <span class="glyphicon glyphicon-menu-right"></span
+              ><span>Tax:</span>
+            </div>
+            <div class="col-sm-5 price-tag"><span>1000 บาท</span></div>
+          </div>
+          <div class="row-sm payment-item" style="display: flex;">
+            <div class="col-sm-7 ">
+              <span class="glyphicon glyphicon-menu-right"></span>Services Fee:
+            </div>
+            <div class="col-sm-5 price-tag">200 บาท</div>
+          </div>
+          <div class="row-sm" style="display: flex;">
+            <div class="col-sm-4 "></div>
+            <div class="col-sm-8 price-tag" style="margin: 2% 2%;">
+              Total: 36,670 บาท
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/check_out.js"></script>
+</html>
