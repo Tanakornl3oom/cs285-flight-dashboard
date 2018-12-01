@@ -24,7 +24,7 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="col-md-8 padding-zero" >
+      <div class="col-md-8 padding-zero">
         <div class="margin-top" id="div-information">
           <div class="well bg-white padding-important">
             <div class="container-fluid">
@@ -36,31 +36,30 @@
               </div>
               <div class="row">
                 <div class="col-sm-2">
-                  <select id = "title">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
+                  <select id="title">
+                    <option value="Mr.">Mr.</option>
+                    <option value="Mrs.">Mrs.</option>
+                    <option value="Ms.">Ms.</option>
                   </select>
                 </div>
                 <div class="col-sm-3">
-                  <input type="text" value="firstname" id = "firstname" />
+                  <input type="text" value="firstname" id="firstname" />
                 </div>
                 <div class="col-sm-3">
-                  <input type="text" value="lastname"  id = "lastname"/>
+                  <input type="text" value="lastname" id="lastname" />
                 </div>
                 <div class="col-sm-4">
-                  <select  id = "day">
+                  <select id="day">
                     <% for (let day = 1; day <=31; day ++) { %>
                     <option value="<%=day%>"><%=day%></option>
                     <% } %>
                   </select>
-                  <select  id = "month">
+                  <select id="month">
                     <% for (let month = 1; month <=12; month ++) { %>
                     <option value="<%=month%>"><%=month%></option>
                     <% } %>
                   </select>
-                  <select id ="year">
+                  <select id="year">
                     <% for (let year = 1970; year <=2018; year ++) { %>
                     <option value="<%=year%>"><%=year%></option>
                     <% } %>
@@ -74,28 +73,28 @@
               </div>
               <div class="row">
                 <div class="col-sm-4">
-                  <input type="text" value="Passport"id ="passport" />
+                  <input type="text" value="Passport" id="passport" />
                 </div>
                 <div class="col-sm-4">
-                  <select id ="country">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
+                  <select id="country">
+                    <option value="Thailand">Thailand</option>
+                    <option value="England">England</option>
+                    <option value="USA">USA</option>
+                    <option value="France">France</option>
                   </select>
                 </div>
                 <div class="col-sm-4">
-                  <select id ="day-exp">
+                  <select id="day-exp">
                     <% for (let day = 1; day <=31; day ++) { %>
                     <option value="<%=day%>"><%=day%></option>
                     <% } %>
                   </select>
-                  <select id ="month-exp">
+                  <select id="month-exp">
                     <% for (let month = 1; month <=12; month ++) { %>
                     <option value="<%=month%>"><%=month%></option>
                     <% } %>
                   </select>
-                  <select id ="year-exp">
+                  <select id="year-exp">
                     <% for (let year = 1970; year <=2018; year ++) { %>
                     <option value="<%=year%>"><%=year%></option>
                     <% } %>
@@ -103,7 +102,11 @@
                 </div>
               </div>
               <div class="center">
-                <button class="btn-success btn-md btn" type="button"  id="information">
+                <button
+                  class="btn-success btn-md btn"
+                  type="button"
+                  id="information"
+                >
                   Next
                 </button>
               </div>
@@ -126,11 +129,7 @@
                   <div class="col-sm-6">
                     <div class="row">
                       <div class="col-sm-1">
-                        <input
-                          id="tour-fee"
-                          type="checkbox"
-                          name="tour_fee"
-                        />
+                        <input id="tour-fee" type="checkbox" name="tour_fee" />
                       </div>
                       <div class="col-sm-10">
                         <front> ประกันกระเป๋าเดินทางหายหรือล่าช้า</front><br />
@@ -169,7 +168,7 @@
                       <div class="col-sm-10">
                         <front> ประกันอุบัติเหตุและสุขภาพ ระหว่างเดินทาง</front
                         ><br />
-                        <front> (ราคา 1,300 บาท)</front>
+                        <front> (ราคา 650 บาท)</front>
                       </div>
                     </div>
                     <br />
@@ -191,7 +190,11 @@
                 </div>
               </div>
               <div class="center">
-                <button class="btn-success btn-md btn" type="button" id="option">
+                <button
+                  class="btn-success btn-md btn"
+                  type="button"
+                  id="option"
+                >
                   Next
                 </button>
               </div>
@@ -222,15 +225,37 @@
               <span class="glyphicon glyphicon-menu-right"></span
               ><span>Tax:</span>
             </div>
-            <div class="col-sm-5 price-tag"><span>1000 บาท</span></div>
+            <div class="col-sm-5 price-tag"><span>1,000 </span>บาท</div>
           </div>
           <div class="row-sm payment-item" style="display: flex;">
             <div class="col-sm-7 ">
               <span class="glyphicon glyphicon-menu-right"></span>Services Fee:
             </div>
-            <div class="col-sm-5 price-tag">200 บาท</div>
+            <div class="col-sm-5 price-tag"><span id="fee">0 </span>บาท</div>
           </div>
-          <div class="row-sm" style="display: flex;">
+          <div
+            id="div-tour-fee"
+            class="row-sm payment-item-fee"
+            style="display: none;"
+          >
+            <div class="col-sm-7 ">
+              <span class="text-red"> -ประกันกระเป๋าเดินทางหายหรือล่าช้า </span>
+            </div>
+            <div class="col-sm-5 price-tag text-red"><span>350</span>บาท</div>
+          </div>
+          <div
+            id="div-health-fee"
+            class="row-sm payment-item"
+            style="display: none;"
+          >
+            <div class="col-sm-7 ">
+              <span class="text-red">
+                -ประกันอุบัติเหตุและสุขภาพ ระหว่างเดินทาง
+              </span>
+            </div>
+            <div class="col-sm-5 price-tag text-red"><span>650</span>บาท</div>
+          </div>
+          <div id="total" class="row-sm" style="display: flex;">
             <div class="col-sm-4 "></div>
             <div class="col-sm-8 price-tag" style="margin: 2% 2%;">
               Total: 36,670 บาท
@@ -239,8 +264,7 @@
         </div>
       </div>
     </div>
-    
   </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="/check_out.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/check_out.js"></script>
 </html>
