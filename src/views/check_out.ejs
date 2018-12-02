@@ -218,7 +218,9 @@
             <div class="col-sm-7 ">
               <span class="glyphicon glyphicon-menu-right"></span>Flight
             </div>
-            <div class="col-sm-5 price-tag"><span>25670 บาท</span></div>
+            <div class="col-sm-5 price-tag">
+              <span><%= flight.price %> บาท</span>
+            </div>
           </div>
           <div class="row-sm payment-item" style="display: flex;">
             <div class="col-sm-7 ">
@@ -258,7 +260,11 @@
           <div id="total" class="row-sm" style="display: flex;">
             <div class="col-sm-4 "></div>
             <div class="col-sm-8 price-tag" style="margin: 2% 2%;">
-              Total: 36,670 บาท
+              Total:
+              <span id="total-value">
+                <%= parseInt(flight.price.replace(/,/g , "")) + 1000 %>
+              </span>
+              บาท
             </div>
           </div>
         </div>

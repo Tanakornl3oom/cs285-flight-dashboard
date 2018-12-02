@@ -35,46 +35,37 @@ $("#option").click(() => {
   };
   const data = {
     user: dataInformation,
-    insurances: dataInsurances,
-    filghtId: flightId
+    insurances: dataInsurances
   };
-  console.log(data);
+  $.ajax({
+    type: "POST",
+    url: "/flight/" + flightId + "/purchase",
+    data: JSON.stringify(data),
+    complete: data => {
+      alert(data.responseText);
+    },
+    dataType: "json",
+    contentType: "application/json"
+  });
 });
 
 $("#health-fee").click(() => {
   if ($("#health-fee").is(":checked")) {
     $("#div-health-fee").css("display", "flex");
     $("#total").show();
-    if ($("#tour-fee").is(":checked")) {
-      $("#fee").text("1,000");
-    } else {
-      $("#fee").text("650");
-    }
+    $("#total-value").text(parseInt($("#total-value").text()) + 650);
   } else {
+    $("#total-value").text(parseInt($("#total-value").text()) - 650);
     $("#div-health-fee").hide();
-    if ($("#tour-fee").is(":checked")) {
-      $("#fee").text("350");
-    } else {
-      $("#fee").text("0");
-    }
   }
 });
 
 $("#tour-fee").click(() => {
   if ($("#tour-fee").is(":checked")) {
     $("#div-tour-fee").css("display", "flex");
-    $("#total").show();
-    if ($("#health-fee").is(":checked")) {
-      $("#fee").text("1,000");
-    } else {
-      $("#fee").text("350");
-    }
+    $("#total-value").text(parseInt($("#total-value").text()) + 350);
   } else {
+    $("#total-value").text(parseInt($("#total-value").text()) - 350);
     $("#div-tour-fee").hide();
-    if ($("#health-fee").is(":checked")) {
-      $("#fee").text("650");
-    } else {
-      $("#fee").text("0");
-    }
   }
 });

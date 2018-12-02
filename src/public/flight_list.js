@@ -67,7 +67,9 @@ function renderFlightsRowListView(flights) {
 			</div>
 		  </div>
 		  <p>flight# : SU 217 | aircraft type :3333 | operatedby : Aeroflc</p>
-		  <button class="btn-primary btn btn-lg">Select</button>
+		  <a href="/flight/${
+        flight.id
+      }/check-out"><button  class="btn-primary btn btn-lg"> Select</button></a>
 		</td>
 	  </tr>
 	  `;

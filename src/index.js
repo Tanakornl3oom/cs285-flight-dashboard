@@ -35,70 +35,80 @@ import FeeCreator from "./models/FeeCreator";
  * define routers
  */
 app.get("/", (req, res) => {
-	// res.sendFile(`${publicPath}/flight.html`);
-	console.log(flights);
-	res.render("index");
+  // res.sendFile(`${publicPath}/flight.html`);
+  console.log(flights);
+  res.render("index");
 });
 
 app.get("/flight/search", (req, res) => {
-	// res.sendFile(`${publicPath}/flight.html`);
-	res.render("flight");
+  // res.sendFile(`${publicPath}/flight.html`);
+  res.render("flight");
 });
 
 app.get("/flight/list", (req, res) => {
-	// res.sendFile(`${publicPath}/listflight.html`);
-	res.render("listflight");
+  // res.sendFile(`${publicPath}/listflight.html`);
+  res.render("listflight");
 });
 
 app.get("/flight/:flightId/check-out", async (req, res) => {
-	const { flightId } = req.params;
-	try {
-		const flight = await findFlightById({ flightId });
-		if (!flight) throw new Error("Flight not found!");
-		res.render("check_out");
-		//TODO: res.render("ejsfile", { flight })
-	} catch (error) {
-		res.status(400).send(error.message || error);
-	}
+  const { flightId } = req.params;
+  try {
+    const flight = await findFlightById({ flightId });
+    if (!flight) throw new Error("Flight not found!");
+    res.render("check_out", { flight });
+  } catch (error) {
+    res.status(400).send(error.message || error);
+  }
 });
 
 app.post("/flight/:flightId/purchase", async (req, res) => {
-	try {
-		const { user, insurances, flightId } = req.body;
+  try {
+    const { flightId } = req.params;
+    const { user, insurances } = req.body;
 
-		/* Show user informations */
-		const {
-			title,
-			firstName,
-			lastName,
-			birthDate,
-			passport,
-			country,
-			passportExp
-		} = user;
+    let responseMessage = "";
 
-		console.log(`${title}${firstName} ${lastName} | birthDate: ${birthDate}`);
-		console.log(`Passport: ${passport}${country} | expired in: ${passportExp}`);
+    /* Show user informations */
+    const {
+      title,
+      firstName,
+      lastName,
+      birthDate,
+      passport,
+      country,
+      passportExp
+    } = user;
 
-		/* Create flight object */
-		const flightObj = await findFlightById({ flightId });
-		const flight = new Flight(flightObj);
+    responseMessage +=
+      `${title}${firstName} ${lastName} | birthDate: ${birthDate}` + "\n";
+    responseMessage +=
+      `Passport: ${passport}${country} | expired in: ${passportExp}` + "\n";
 
-		/* Fee management */
-		const { bag, life } = insurances;
+    /* Create flight object */
+    const flightObj = await findFlightById({ flightId });
+    const flight = new Flight(flightObj);
 
-		let feePackage;
-		if (bag && life) feePackage = "LIFENBAG";
-		else if (bag) feePackage = "BAG";
-		else feePackage = "LIFE";
+    /* Fee management */
+    const { bag, life } = insurances;
 
-		const feeCreator = new FeeCreator();
-		const fee = feeCreator.createFee({ flight, feePackage });
+    let feePackage;
+    if (bag && life) feePackage = "LIFENBAG";
+    else if (bag) feePackage = "BAG";
+    else if (life) feePackage = "LIFE";
+    else feePackage = "DEFAULT";
 
-		console.log(`Total fee: ${fee.getTotalFee}`);
-	} catch (error) {
-		res.status(400).send(error.message || error);
-	}
+    const feeCreator = new FeeCreator();
+    const fee = feeCreator.createFee({ flight, feePackage });
+
+    responseMessage += `Total fee: ${fee.getTotalFee()}` + "\n";
+
+    console.log(responseMessage);
+    res.status(200).send(responseMessage);
+  } catch (error) {
+    const errorMessage = error.message || error;
+    console.log(`error: errorMessage`);
+    res.status(400).send(errorMessage);
+  }
 });
 
 const DEFAULT_ITEMS_PER_PAGE = 4;
@@ -108,23 +118,23 @@ const DEFAULT_PAGE_NUMBER = 1;
  * @param pageNumber {number} - Number specify set of items that will display as row in that page
  */
 app.get("/flights", (req, res) => {
-	const {
-		itemsPerPage = DEFAULT_ITEMS_PER_PAGE,
-		pageNumber = DEFAULT_PAGE_NUMBER
-	} = req.query;
-	console.log(pageNumber, itemsPerPage);
-	const offset = (parseInt(pageNumber) - 1) * parseInt(itemsPerPage);
+  const {
+    itemsPerPage = DEFAULT_ITEMS_PER_PAGE,
+    pageNumber = DEFAULT_PAGE_NUMBER
+  } = req.query;
+  console.log(pageNumber, itemsPerPage);
+  const offset = (parseInt(pageNumber) - 1) * parseInt(itemsPerPage);
 
-	res.json({
-		statusCode: 200,
-		flights: FLIGHTS.slice(offset, parseInt(offset) + parseInt(itemsPerPage)),
-		pageNumber,
-		itemsPerPage,
-		flightsPageTotal: Math.ceil(FLIGHTS.length / parseInt(itemsPerPage))
-	});
+  res.json({
+    statusCode: 200,
+    flights: FLIGHTS.slice(offset, parseInt(offset) + parseInt(itemsPerPage)),
+    pageNumber,
+    itemsPerPage,
+    flightsPageTotal: Math.ceil(FLIGHTS.length / parseInt(itemsPerPage))
+  });
 });
 
 const PORT = 3000;
 app.listen(PORT, () => {
-	console.log(`Start server at port: ${PORT}`);
+  console.log(`Start server at port: ${PORT}`);
 });
