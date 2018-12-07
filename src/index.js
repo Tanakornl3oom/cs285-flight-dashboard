@@ -36,8 +36,7 @@ import FeeCreator from "./models/FeeCreator";
  */
 app.get("/", (req, res) => {
   // res.sendFile(`${publicPath}/flight.html`);
-  console.log(flights);
-  res.render("index");
+  res.render("flight");
 });
 
 app.get("/flight/search", (req, res) => {
