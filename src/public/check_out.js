@@ -53,8 +53,10 @@ $("#health-fee").click(() => {
   if ($("#health-fee").is(":checked")) {
     $("#div-health-fee").css("display", "flex");
     $("#total").show();
+    $("#fee").text(parseInt($("#fee").text()) + 650);
     $("#total-value").text(parseInt($("#total-value").text()) + 650);
   } else {
+    $("#fee").text(parseInt($("#fee").text()) - 650);
     $("#total-value").text(parseInt($("#total-value").text()) - 650);
     $("#div-health-fee").hide();
   }
@@ -63,8 +65,10 @@ $("#health-fee").click(() => {
 $("#tour-fee").click(() => {
   if ($("#tour-fee").is(":checked")) {
     $("#div-tour-fee").css("display", "flex");
+    $("#fee").text(parseInt($("#fee").text()) + 350);
     $("#total-value").text(parseInt($("#total-value").text()) + 350);
   } else {
+    $("#fee").text(parseInt($("#fee").text()) - 350);
     $("#total-value").text(parseInt($("#total-value").text()) - 350);
     $("#div-tour-fee").hide();
   }
